@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Multi-Converter</title>
+</head>
+<body>
+    <form>
+        <h1>Multi-Converter</h1>
+        <input type="number" id="input" placeholder="Type a number"><br>
+        <select id="categorySelect">
+            <option selected disabled>(Select a Conversion Type)</option>
+            <option value="tempMenu">Temperature</option>
+            <option value="lengthMenu">Length & Distance</option>
+            <option value="massMenu">Mass & Weight</option>
+            <option value="storageMenu">Digital Storage</option>
+            <option value="areaMenu">Area</option>
+            <option value="speedMenu">Speed</option>
+            <option value="usVolumeMenu">US Volume Metric</option>
+            <option value="powerMenu">Power</option>
+            <option value="timeMenu">Time</option>
+            <option value="realEstateMenu">Real Estate/Land</option>  
+        </select>
+        <select class="sub-menu" id="tempMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toCelsius">Convert from Fahrenheit to Celsius</option>
+            <option value="toFahrenheit">Convert from Celsius to Fahrenheit</option>
+        </select>    
+        <select class="sub-menu" id="lengthMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toMiles">Convert from Kilometers to Miles</option>
+            <option value="toKilometers">Convert from Miles to Kilometers</option>
+            <option value="toFeet">Convert from Meters to Feet</option>
+            <option value="toMeters">Convert from Feet to Meters</option>
+            <option value="toInches">Convert from Centimeters to Inches</option>
+            <option value="toCentimeters">Convert from Inches to Centimeters</option>
+        </select>
+        <select class="sub-menu" id="massMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toPounds">Convert from Kilograms to Pounds (lbs)</option>
+            <option value="toKilograms">Convert from Pounds to Kilograms</option>
+            <option value="toOunces">Convert from Grams to Ounces (oz)</option>
+            <option value="toGrams">Convert from Ounces to Grams</option>
+        </select>
+        <select class="sub-menu" id="storageMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toGigabytes1">Convert from Megabytes to Gigabytes</option>
+            <option value="toMegabytes">Convert from Gigabytes to Megabytes</option>
+            <option value="toTerabytes">Convert from Gigabytes to Terabytes</option>
+            <option value="toGigabytes2">Convert from Terabytes to Gigabytes</option>
+        </select>
+        <select class="sub-menu" id="areaMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toSquareFeet">Convert from Square Meters to Square Feet</option>
+            <option value="toSquareMeters1">Convert from Square Feet to Square Meters</option>
+            <option value="toAcres1">Convert from Hectares to Acres</option>
+            <option value="toHectares">Convert from Acres to Hectares</option>
+        </select>
+        <select class="sub-menu" id="speedMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toMilesPerHour">Convert from Kilometers per hour (km/h) to Miles per hour (mph)</option>
+            <option value="toKilometersPerHour1">Convert from Miles per hour to Kilometers per hour</option>
+            <option value="toKilometersPerHour2">Convert from Meters per second (m/s) to Kilometers per hour</option>
+        </select>
+        <select class="sub-menu" id="usVolumeMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toUsGallons">Convert from Liters to US Gallons</option>
+            <option value="toLiters">Convert from US Gallons to Liters</option>
+            <option value="toUsFluidOunces">Convert from Milliliters (ml) to US Fluid Ounces (fl oz)</option>
+            <option value="toMilliliters">Convert from US Fluid Ounces to Milliliters</option>
+        </select>
+        <select class="sub-menu" id="powerMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toHorsepower">Convert from Kilowatts (kW) to Horsepower (hp)</option>
+            <option value="toKilowatts1">Convert from Horsepower (hp) to Kilowatts (kW)</option>
+            <option value="toKilowatts2">Convert from kVA to Kilowatts (kW)</option>
+        </select>
+        <select class="sub-menu" id="timeMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toMinutes">Convert from Hours to Minutes</option>
+            <option value="toHours">Convert from Days to Hours</option>
+            <option value="toDays">Convert from Weeks to Days</option>
+        </select>
+        <select class="sub-menu" id="realEstateMenu">
+            <option selected disabled>(Select Conversion)</option>
+            <option value="toSquareMeters2">Convert from Plots to Square Meters (sqm)</option>
+            <option value="toPlots">Convert from Square Meters to Plots</option>
+            <option value="toAcres2">Convert from Plots to Acres</option>
+        </select><br>
+        <button type="button" id="submit">Convert</button>
+        <p id="result"></p>
+        
+        
+        <!----- if user prefers to use radio buttons and not dropdown menus 
+
+
+        <input type="number" id="input" placeholder="Type a number"><br>
+        <h2>Temperature</h2>
+        <input type="radio" id="toCelsius" name="unit">
+        <label for="toCelsius">Convert from Fahrenheit to Celsius</label><br>
+        <input type="radio" id="toFahrenheit" name="unit">
+        <label for="toFahrenheit">Convert from Celsius to Fahrenheit</label><br>
+        <h2>Length & Distance</h2>
+        <input type="radio" id="toMiles" name="unit">
+        <label for="toMiles">Convert from Kilometers to Miles</label><br>
+        <input type="radio" id="toKilometers" name="unit">
+        <label for="toKilometers">Convert from Miles to Kilometers</label><br>
+        <input type="radio" id="toFeet" name="unit">
+        <label for="toFeet">Convert from Meters to Feet</label><br>
+        <input type="radio" id="toMeters" name="unit">
+        <label for="toMeters">Convert from Feet to Meters</label><br>
+        <input type="radio" id="toInches" name="unit">
+        <label for="toInches">Convert from Centimeters to Inches</label><br>
+        <input type="radio" id="toCentimeters" name="unit">
+        <label for="toCentimeters">Convert from Inches to Centimeters</label><br>
+        <h2>Mass & Weight</h2>
+        <input type="radio" id="toPounds" name="unit">
+        <label for="toPounds">Convert from Kilograms to Pounds (lbs)</label><br>
+        <input type="radio" id="toKilograms" name="unit">
+        <label for="toKilograms">Convert from Pounds to Kilograms</label><br>
+        <input type="radio" id="toOunces" name="unit">
+        <label for="toOunces">Convert from Grams to Ounces (oz)</label><br>
+        <input type="radio" id="toGrams" name="unit">
+        <label for="toGrams">Convert from Ounces to Grams</label><br>
+        <h2>Digital Storage</h2>
+        <input type="radio" id="toGigabytes1" name="unit">
+        <label for="toGigabytes1">Convert from Megabytes to Gigabytes</label><br>
+        <input type="radio" id="toMegabytes" name="unit">
+        <label for="toMegabytes">Convert from Gigabytes to Megabytes</label><br>
+        <input type="radio" id="toTerabytes" name="unit">
+        <label for="toTerabytes">Convert from Gigabytes to Terabytes</label><br>
+        <input type="radio" id="toGigabytes2" name="unit">
+        <label for="toGigabytes2">Convert from Terabytes to Gigabytes</label><br>
+        <h2>Area</h2>
+        <input type="radio" id="toSquareFeet" name="unit">
+        <label for="toSquareFeet">Convert from Square Meters to Square Feet</label><br>
+        <input type="radio" id="toSquareMeters1" name="unit">
+        <label for="toSquareMeters1">Convert from Square Feet to Square Meters</label><br>
+        <input type="radio" id="toAcres1" name="unit">
+        <label for="toAcres1">Convert from Hectares to Acres</label><br>
+        <input type="radio" id="toHectares" name="unit">
+        <label for="toHectares">Convert from Acres to Hectares</label><br>
+        <h2>Speed</h2>
+        <input type="radio" id="toMilesPerHour" name="unit">
+        <label for="toMilesPerHour">Convert from Kilometers per hour (km/h) to Miles per hour (mph)</label><br>
+        <input type="radio" id="toKilometersPerHour1" name="unit">
+        <label for="toKilometersPerHour1">Convert from Miles per hour to Kilometers per hour</label><br>
+        <input type="radio" id="toKilometersPerHour2" name="unit">
+        <label for="toKilometersPerHour2">Convert from Meters per second (m/s) to Kilometers per hour</label><br>
+        <h2>US Volume Metric</h2>
+        <input type="radio" id="toUsGallons" name="unit">
+        <label for="toUsGallons">Convert from Liters to US Gallons</label><br>
+        <input type="radio" id="toLiters" name="unit">
+        <label for="toLiters">Convert from US Gallons to Liters</label><br>
+        <input type="radio" id="toUsFluidOunces" name="unit">
+        <label for="toUsFluidOunces">Convert from Milliliters (ml) to US Fluid Ounces (fl oz)</label><br>
+        <input type="radio" id="toMilliliters" name="unit">
+        <label for="toMilliliters">Convert from US Fluid Ounces to Milliliters</label><br>
+        <h2>Power</h2>
+        <input type="radio" id="toHorsepower" name="unit">
+        <label for="toHorsepower">Convert from Kilowatts (kW) to Horsepower (hp)</label><br>
+        <input type="radio" id="toKilowatts1" name="unit">
+        <label for="toKilowatts1">Convert from Horsepower (hp) to Kilowatts (kW)</label><br>
+        <input type="radio" id="toKilowatts2" name="unit">
+        <label for="toKilowatts2">Convert from kVA to Kilowatts (kW)</label><br>
+        <h2>Time</h2>
+        <input type="radio" id="toMinutes" name="unit">
+        <label for="toMinutes">Convert from Hours to Minutes</label><br>
+        <input type="radio" id="toHours" name="unit">
+        <label for="toHours">Convert from Days to Hours</label><br>
+        <input type="radio" id="toDays" name="unit">
+        <label for="toDays">Convert from Weeks to Days</label><br>
+        <h2>Real Estate/Land</h2>
+        <input type="radio" id="toSquareMeters2" name="unit">
+        <label for="toSquareMeters2">Convert from Plots to Square Meters (sqm)</label><br>
+        <input type="radio" id="toPlots" name="unit">
+        <label for="toPlots">Convert from Square Meters to Plots</label><br>
+        <input type="radio" id="toAcres2" name="unit">
+        <label for="toAcres2">Convert from Plots to Acres</label><br>
+        <button type="button" id="submit">Convert</button>
+        <p id="result"></p> 
+        --->
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
