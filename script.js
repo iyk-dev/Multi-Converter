@@ -213,7 +213,7 @@ button.onclick = function convert(){
     }
 }
 
-// if user prefers to use radio buttons
+// js for the radio buttons html. may be broken now because of the dropdown menu approach i took, i haven't tested this js after implementing the menu approach, just leaving the code here as well.
 /*
 button.onclick = function convert(){
     let temp = Number(input.value);
