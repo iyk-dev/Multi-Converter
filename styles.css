@@ -1,55 +1,128 @@
-form{
-    text-align: center;
-    max-width: 500px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 15px;
-    background-color: blanchedalmond;
-    font-family: monospace;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* General Reset & Body Layout */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-button{
-    height: 2.5em;
-    background-color: rgb(0, 174, 255);
-    color: aliceblue;
+/* The Main Converter Card */
+form {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #1a202c;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Input Fields & Dropdowns */
+input, select {
+    width: 100%;
+    max-width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e2e8f0;
     border-radius: 10px;
-    margin-top: 30px;
-    width: 100px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: #4a5568;
+    background-color: #f7fafc;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
-button:hover{
-    text-overflow: ellipsis ;
-}
-input{
-    border-radius: 6px;
-    margin: 10px;
-    height: 2.5em;
+
+input {
+    cursor: text;
     text-align: center;
 }
 
-input:active{
-    text-decoration: none;
+/* Focus states for input and selects */
+input:focus, select:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
-p{
-    margin: 30px;
-    font-size: larger;
-}
-
-select{
-    border-radius: 6px;
-    height: 2.5em;
-    max-width: 250px;
-    text-align: center;
-}
-select + select{
-    max-width: 150px;
-}
-
-.sub-menu{
+/* Sub-menus hidden by default (required for your JS) */
+.sub-menu {
     display: none;
-    margin: 30px;
+    margin-bottom: 20px;
 }
 
-#categorySelect{
-    margin: 30px;
+#categorySelect {
+    margin-bottom: 20px;
+}
+
+/* Convert Button */
+button {
+    width: 100%;
+    height: 50px;
+    background-color: #667eea;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+}
+
+button:hover {
+    background-color: #5a6cd6;
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+}
+
+/* Result Text */
+p#result {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3748;
+    min-height: 29px; /* Prevents the card from jumping before a result is rendered */
+    word-wrap: break-word;
+}
+
+/* my site is already responsive for all devices , i'm adding this here just in case */
+@media (max-width: 400px) {
+    form {
+        padding: 30px 20px; /* Reduce inner padding */
+    }
+    
+    h1 {
+        font-size: 24px; /* Slightly smaller title */
+    }
+    
+    input, select, button {
+        font-size: 14px; /* Slightly smaller text inside inputs */
+    }
 }
